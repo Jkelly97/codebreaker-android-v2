@@ -3,13 +3,13 @@ package edu.cnm.deepdive.codebreaker.service;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import com.facebook.stetho.BuildConfig;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
-import edu.cnm.deepdive.codebreaker.BuildConfig;
 
 public class GoogleSignInService {
 
@@ -20,11 +20,11 @@ public class GoogleSignInService {
   private GoogleSignInAccount account;
 
   private GoogleSignInService() {
-    GoogleSignInOptions options = new GoogleSignInOptions.Builder()
+    GoogleSignInOptions options  = new GoogleSignInOptions.Builder()
         .requestEmail()
         .requestId()
         .requestProfile()
-//        .requestIdToken(BuildConfig,CLIENT_ID)
+//        .requestIdToken(BuildConfig.CLIENT_ID)
         .build();
     client = GoogleSignIn.getClient(context, options);
   }
@@ -33,7 +33,7 @@ public class GoogleSignInService {
     GoogleSignInService.context = context;
   }
 
-  private static GoogleSignInService getInstance() {
+  public static GoogleSignInService getInstance() {
     return InstanceHolder.INSTANCE;
   }
 
@@ -69,6 +69,9 @@ public class GoogleSignInService {
   }
 
   private static class InstanceHolder {
+
     private static final GoogleSignInService INSTANCE = new GoogleSignInService();
+
   }
+
 }
