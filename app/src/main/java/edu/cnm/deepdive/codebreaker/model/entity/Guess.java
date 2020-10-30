@@ -5,7 +5,6 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
-import androidx.room.Insert;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 import java.util.UUID;
@@ -32,7 +31,7 @@ public class Guess {
   @ColumnInfo(name = "game_id", index = true)
   private long gameId;
 
-  @ColumnInfo(name = "guess_key")
+  @ColumnInfo(name = "guess_key", typeAffinity = ColumnInfo.BLOB)
   private UUID guessKey;
 
   @NonNull
@@ -102,4 +101,5 @@ public class Guess {
   public void setClose(int close) {
     this.close = close;
   }
+
 }
