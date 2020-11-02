@@ -11,6 +11,7 @@ import edu.cnm.deepdive.codebreaker.model.pojo.GuessWithGame;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
+import javax.annotation.WillClose;
 
 @Dao
 public interface GuessDao {
@@ -37,4 +38,6 @@ public interface GuessDao {
   @Query("SELECT * FROM Guess WHERE guess_id = :id")
   LiveData<GuessWithGame> select(long id);
 
+  @Query("SELECT * FROM Guess WHERE game_id = :id ORDER BY submitted ASC")
+  LiveData<List<Guess>> selectForGame(long id);
 }
