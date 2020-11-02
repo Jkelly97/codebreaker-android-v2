@@ -76,9 +76,10 @@ public class GameRepository {
         .subscribeOn(Schedulers.io());
   }
 
-  public LiveData<List<Guess>> getGuesses(Game game){
+  public LiveData<List<Guess>> getGuesses(Game game) {
     return guessDao.selectForGame(game.getId());
   }
+
   public LiveData<List<ScoreSummary>> getSummaries() {
     return scoreDao.selectSummaries();
   }
