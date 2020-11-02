@@ -33,5 +33,6 @@
   </string-array>
 
   <string name="average_guesses_format">%4.2f</string>
+  <string name="COMPLETED_GAMES_QUERY">SELECT DISTINCT gm.* FROM GAME AS gm INNER JOIN Guess AS gs WHERE gs.game_id = gm.game_id AND gs.correct = gm.code_length ORDER BY gm.started = gs.submitted DESC</string>
 
 </resources>
