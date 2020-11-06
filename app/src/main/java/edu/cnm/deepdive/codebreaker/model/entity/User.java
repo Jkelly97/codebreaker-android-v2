@@ -87,4 +87,12 @@ public class User {
     this.connected = connected;
   }
 
+  public UUID getExternalKey() {
+    return externalKey;
+  }
+
+  public void setExternalKey(UUID externalKey) {
+    this.externalKey = externalKey;
+  }
+
 }

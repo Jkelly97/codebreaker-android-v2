@@ -3,8 +3,10 @@ package edu.cnm.deepdive.codebreaker.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import edu.cnm.deepdive.codebreaker.BuildConfig;
+import edu.cnm.deepdive.codebreaker.model.entity.Match;
 import edu.cnm.deepdive.codebreaker.model.entity.User;
 import io.reactivex.Single;
+import java.util.UUID;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
@@ -13,11 +15,19 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface CodebreakerWebService {
 
   @GET("users/me")
   Single<User> getProfile(@Header("Authorization") String bearerToken);
+
+  @POST("matches")
+  Single<Match> startMatch(@Header("Authorization") String bearerToken, Match match);
+
+  @GET("matches/{matchId")
+  Single<Match> startMatch(@Header("Authorization") String bearerToken, @Path("mathcId") UUID matchId);
 
   static CodebreakerWebService getInstance() {
     return InstanceHolder.INSTANCE;
