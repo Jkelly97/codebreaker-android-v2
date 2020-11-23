@@ -40,7 +40,8 @@ public class NavigationActivity extends AppCompatActivity {
 
   private void setUpNavigation() {
     appBarConfig = new Builder(
-        R.id.navigation_game, R.id.navigation_summary, R.id.navigation_settings)
+        R.id.navigation_game, R.id.navigation_summary, R.id.navigation_settings,
+        R.id.navigation_match)
         .setOpenableLayout(binding.drawerLayout)
         .build();
     //noinspection ConstantConditions
