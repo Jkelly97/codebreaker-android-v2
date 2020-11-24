@@ -8,7 +8,7 @@
   <string name="results_of_guess">Results of guess</string>
   <string name="restart_game">Restart game</string>
   <string name="restart_game_condensed">Restart</string>
-  <string name="title_activity_settings">Settings</string>
+  <string name="title_settings">Settings</string>
   <string name="settings">Settings</string>
   <string name="code_length_pref_key">code_length_pref</string>
   <string name="code_length_pref_title">Code length</string>
@@ -21,10 +21,9 @@
   <string name="sign_out">Sign out</string>
   <string name="code_length">Code Length</string>
   <string name="average_of_guesses">Average # of Guesses</string>
-  <!-- TODO: Remove or change this placeholder text -->
+
   <string name="average_guesses_format">%4.2f</string>
 
-  <string name="COMPLETED_GAMES_QUERY">SELECT DISTINCT gm.* FROM GAME AS gm INNER JOIN Guess AS gs WHERE gs.game_id = gm.game_id AND gs.correct = gm.code_length ORDER BY gm.started = gs.submitted DESC</string>
   <string name="title_activity_navigation">NavigationActivity</string>
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -36,10 +35,11 @@
 
   <string name="menu_gallery">Gallery</string>
   <string name="menu_slideshow">Slideshow</string>
-  <string name="title_summary">title_summary</string>
-  <string name="title_settings">title_settings</string>
+  <string name="title_summary">Summary</string>
   <string name="title_current_game">Current game</string>
-  <string name="title_matches">Matches</string>
+  <string name="title_current_matches">Current matches</string>
+  <string name="title_available_matches">Available matches</string>
+  <string name="title_closed_matches">Closed matches</string>
   <string-array name="color_labels">
     <item>Red</item>
     <item>Orange</item>
